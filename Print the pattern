@@ -1,0 +1,90 @@
+Print the pattern
+Using recursion, print the given pattern.
+
+Input Format
+First line contains integer n, representing rows of the given pattern
+
+Output Format
+Display the given pattern.
+
+Example 1
+Input
+
+5
+
+Output
+
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+
+Explanation:
+
+The number of rows given is 5.
+
+Example 2
+Input
+
+3
+
+Output
+
+
+* 
+* * 
+* * * 
+
+Explanation:
+
+The number of rows given is 3.
+
+Constraints
+1 <= n <= 102
+
+Topics
+Recursion
+Companies
+Adobe
+
+
+import java.io.*;
+import java.util.*;
+
+class Main
+{
+
+	public static void solve(int n)
+    {
+        helper(n,"");
+        // Your code here
+        // if(n==0){
+        //     return;
+        // }
+        // solve(n-1);
+        // for(int i=1;i<=n;i++){
+        //     System.out.print("* ");
+        // }
+        // System.out.println();
+        
+    }
+	static void helper(int n, String str){
+        if(n==0){
+            return;
+        }
+        str+="* ";
+        System.out.println(str);
+        helper(n-1, str);
+    }
+    public static void main(String args[])throws IOException
+    {
+        Scanner sc = new Scanner(System.in);
+        
+        int n=sc.nextInt();
+		solve(n);
+
+    }
+}
